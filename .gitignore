@@ -2,3 +2,5 @@
 /shelf/
 /.idea
 *.iml
+# to avoid to upload m3u lists with password
+*.m3u
