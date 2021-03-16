@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-
 import replacer
 from progressbar import progressbar
 
@@ -41,7 +40,5 @@ with open('output.m3u', 'w', encoding='utf_8') as o:
                 # print('printed line number: ', lineNumber + 1)
 
 o.close()
-
-
 
 print('done!')
