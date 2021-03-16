@@ -10,7 +10,7 @@ fileName = 'list.m3u'
 keyMatch = [['|EU|', 'ITALIA'],
             ['|EU|', 'POLONIA'],
             ['VOD', 'ITALIA'],
-            ['XXX']]
+            ['|XXX|']]
 
 exclude = ['XXX ITALIANO', 'XXX MARIO SALIERI XXX']
 
