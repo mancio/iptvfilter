@@ -11,7 +11,7 @@ keyMatch = [['|EU|', 'ITALIA'],
             ['VOD', 'ITALIA'],
             ['|XXX|']]
 
-exclude = ['XXX ITALIANO', 'XXX MARIO SALIERI XXX']
+exclude = ['XXX ITALIANO', 'XXX MARIO SALIERI XXX', '---', '==']
 
 replace = ['|XXX|', 'PRIV']
 
