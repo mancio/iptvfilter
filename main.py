@@ -1,10 +1,19 @@
 #!/usr/bin/env python3
+import sys
+
+import requests as requests
 
 import replacer
 from progressbar import progressbar
 
 # insert the filename
 fileName = 'list.m3u'
+
+#remote url
+username = sys.argv[1]
+password = sys.argv[2]
+url = 'http://first4k.live:8000/get.php?username={}&password={}&type=m3u_plus&output=ts'.format(username,password)
+
 
 keyMatch = [['|EU|', 'ITALIA'],
             ['|EU|', 'POLONIA'],
@@ -17,6 +26,14 @@ replace = ['|XXX|', 'PRIV']
 
 print('check combinations: ', keyMatch)
 print('exclude: ', exclude)
+
+# download and rename file
+print('Start file download PLEASE WAIT')
+r = requests.get(url, allow_redirects=True)
+open(fileName, 'wb').write(r.content)
+print('Download complete')
+
+print('Start filtering m3u file')
 
 # read file and store in a array of lines
 with open(fileName, errors='replace', encoding='utf_8') as f:

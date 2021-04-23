@@ -5,7 +5,8 @@
 ### How to run
 * install progressbar2 lib by using `pip install progressbar2`
 be careful to not get confused with `progressbar`
-* run the app
+* execute `python main.py {user} {password}` example `python main.py 76485785 85987453`
+to filter the list
 
 ### How to config filter
 * enter the name of the file `fileName = 'list.m3u'`
