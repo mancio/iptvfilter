@@ -7,6 +7,7 @@
 be careful to not get confused with `progressbar`
 * execute `python main.py {user} {password}` example `python main.py 76485785 85987453`
 to filter the list
+* upload the output file in your favourite iptv software like [https://siptv.app](https://siptv.app)   
 
 ### How to config filter
 * enter the name of the file `fileName = 'list.m3u'`

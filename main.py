@@ -6,13 +6,16 @@ import requests as requests
 import replacer
 from progressbar import progressbar
 
-# insert the filename
+# insert the filename where list is downloaded
 fileName = 'list.m3u'
 
-#remote url
+# output file where the list is filtered
+fileOut = 'output.m3u'
+
+# remote url (in case you cannot download please check your firewall and Antivirus)
 username = sys.argv[1]
 password = sys.argv[2]
-url = 'http://first4k.live:8000/get.php?username={}&password={}&type=m3u_plus&output=ts'.format(username,password)
+url = 'http://first4k.live:8000/get.php?username={}&password={}&type=m3u_plus&output=ts'.format(username, password)
 
 
 keyMatch = [['|EU|', 'ITALIA'],
@@ -43,7 +46,7 @@ f.close()
 # cont line position to be able to add the next line with the url link
 lineNumber = 0
 
-with open('output.m3u', 'w', encoding='utf_8') as o:
+with open(fileOut, 'w', encoding='utf_8') as o:
     # write '#EXTM3U'
     o.write(lines[0])
     for line in progressbar(lines[1:]):
