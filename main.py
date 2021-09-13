@@ -1,64 +1,39 @@
 #!/usr/bin/env python3
-import sys
+from ipytv import M3UPlaylist, playlist
 
-import requests as requests
-
-import replacer
-from progressbar import progressbar
-
-# insert the filename where list is downloaded
-fileName = 'list.m3u'
-
-# output file where the list is filtered
-fileOut = 'output.m3u'
-
-# remote url (in case you cannot download please check your firewall and Antivirus)
-username = sys.argv[1]
-password = sys.argv[2]
-url = 'http://first4k.live:8000/get.php?username={}&password={}&type=m3u_plus&output=ts'.format(username, password)
+import inputs
+import operations
 
 
-keyMatch = [['|EU|', 'ITALIA'],
-            ['|EU|', 'POLONIA'],
-            ['VOD', 'ITALIA'],
-            ['|XXX|']]
+def main():
+    hours = 24
 
-exclude = ['XXX ITALIANO', 'XXX MARIO SALIERI XXX', '---', '==']
+    # check if file is too old and need to be downloaded
+    if operations.is_file_old(hours):
+        print('Downloading m3u list from remote')
+        source = operations.m3u_download(inputs.url, inputs.input_file)
+    else:
+        print('Source file newer than ' + str(hours) + ' hours')
+        source = inputs.input_file
 
-replace = ['|XXX|', 'PRIV']
+    # destination list
+    destination = M3UPlaylist()
 
-print('check combinations: ', keyMatch)
-print('exclude: ', exclude)
+    print('Start to build list')
+    pl = playlist.M3UPlaylist.loadf(source)
+    for ch in pl.list:
+        if not any(group_name in operations.get_group_title(ch) for group_name in inputs.exclude_list):
+            if operations.get_group_title(ch).__contains__(inputs.replace_list[0]):
+                operations.set_group_title(ch, inputs.replace_list[1])
+            if operations.get_tvg_name(ch).find(inputs.separator) == -1:
+                destination.add_channel(ch)
 
-# download and rename file
-print('Start file download PLEASE WAIT')
-r = requests.get(url, allow_redirects=True)
-open(fileName, 'wb').write(r.content)
-print('Download complete')
+    operations.save_to_file(destination)
 
-print('Start filtering m3u file')
+    print('list built')
+    print('total channels: ' + str(len(destination.list)))
 
-# read file and store in a array of lines
-with open(fileName, errors='replace', encoding='utf_8') as f:
-    lines = f.readlines()
-f.close()
 
-# cont line position to be able to add the next line with the url link
-lineNumber = 0
-
-with open(fileOut, 'w', encoding='utf_8') as o:
-    # write '#EXTM3U'
-    o.write(lines[0])
-    for line in progressbar(lines[1:]):
-        lineNumber += 1
-        for combination in keyMatch:
-            if all(element in line for element in combination) and not any(element in line for element in exclude):
-                if line.__contains__(replace[0]):
-                    line = replacer.replacegroup(line, replace[1])
-                o.write(line)
-                o.write(lines[lineNumber + 1])
-                # print('printed line number: ', lineNumber + 1)
-
-o.close()
-
-print('done!')
+if __name__ == '__main__':
+    # freeze_support() here if program needs to be frozen
+    main()  # execute this only when run directly, not when imported!
