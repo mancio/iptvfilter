@@ -3,10 +3,12 @@ from datetime import datetime, timedelta
 from pathlib import Path
 
 import requests
+from ipytv import IPTVChannel, IPTVAttr
 
 import inputs
 
 
+# check if the file is hold and decide if is the case to download it again
 def is_file_old(h):
     if Path(inputs.input_file).is_file():
         file_date = datetime.fromtimestamp(path.getmtime(inputs.input_file))
@@ -25,19 +27,34 @@ def m3u_download(url, file):
     return file
 
 
+# build a new channel
+def build_ch(tv_name, url):
+    channel = IPTVChannel(
+        url=url,
+        name=tv_name,
+        duration="-1",
+        attributes={
+            IPTVAttr.TVG_ID.value: tv_name,
+            IPTVAttr.TVG_NAME.value: tv_name,
+            IPTVAttr.GROUP_TITLE.value: inputs.favourite
+        }
+    )
+    return channel
+
+
 # get the value of group-title
 def get_group_title(ch):
     return ch.attributes['group-title']
 
 
+# get tv channel name
+def get_ch_name(ch):
+    return ch.attributes['tvg-name']
+
+
 # set new group title
 def set_group_title(ch, title):
     ch.attributes['group-title'] = title
-
-
-# get tvg value
-def get_tvg_name(ch):
-    return ch.attributes['tvg-name']
 
 
 # save all list to string and copy to file

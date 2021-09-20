@@ -22,11 +22,23 @@ def main():
     print('Start to build list')
     pl = playlist.M3UPlaylist.loadf(source)
     for ch in pl.list:
-        if not any(group_name in operations.get_group_title(ch) for group_name in inputs.exclude_list):
-            if operations.get_group_title(ch).__contains__(inputs.replace_list[0]):
-                operations.set_group_title(ch, inputs.replace_list[1])
-            if operations.get_tvg_name(ch).find(inputs.separator) == -1:
-                destination.add_channel(ch)
+        # search for all ch not in the exclude list
+        if not any(group_name in operations.get_group_title(ch) for group_name in inputs.exclude_gr_list):
+            if not any(ch_name in operations.get_ch_name(ch) for ch_name in inputs.exclude_ch_list):
+                if operations.get_group_title(ch).__contains__(inputs.replace_list[0]):
+                    operations.set_group_title(ch, inputs.replace_list[1])
+                if operations.get_ch_name(ch).find(inputs.separator) == -1:
+                    destination.add_channel(ch)
+                if inputs.fav_list:
+                    for tag in inputs.fav_list:
+                        if operations.get_ch_name(ch).__contains__(tag):
+                            operations.set_group_title(ch, inputs.favourite)
+                            # ones is found is removed to make research faster
+                            inputs.fav_list.remove(tag)
+
+    for couple in inputs.ch_list_more:
+        new_ch = operations.build_ch(couple[0], couple[1])
+        destination.add_channel(new_ch)
 
     operations.save_to_file(destination)
 
