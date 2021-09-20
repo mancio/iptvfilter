@@ -17,7 +17,7 @@ favourite = 'FAV'
 # favourites
 fav_list = [
     'GAMBERO ROSSO',
-    'FOOD NETWORK HD',
+    '[IT] [HD] FOOD NETWORK HD',
     'ALICE HD',
     'DMAX HD',
     'SKY TG 24',
@@ -33,7 +33,13 @@ ch_list_more = [
     ['Virgin Radio TV', 'https://live2-radio-mediaset-it.akamaized.net/Content/hls_h0_clr_vos/live/channel('
                         'ew)/index.m3u8'],
     ['ETV Rete 7', 'https://live.ipstream.it/etv/etv.stream/playlist.m3u8'],
-    ['DeeJay TV', 'https://deejay_tv-lh.akamaihd.net/i/DeejayTv_1@129866/master.m3u8']
+    ['DeeJay TV', 'https://deejay_tv-lh.akamaihd.net/i/DeejayTv_1@129866/master.m3u8'],
+    ['Radio 51', 'https://59d7d6f47d7fc.streamlock.net/canale51/canale51/playlist.m3u8'],
+    ['Radio Company TV', 'https://5929b138b139d.streamlock.net/CompanyTV/livestream_720p/playlist.m3u8'],
+    ['Radio Italia TV', 'https://radioitaliatv-lh.akamaihd.net/i/radioitaliatv_1@329645/master.m3u8'],
+    ['Radio Kiss Kiss TV', 'https://59253971be783.streamlock.net/KissKissTV/KissKissTV.stream/playlist.m3u8'],
+    ['Radio Monte Carlo TV', 'https://live3-radio-mediaset-it.akamaized.net/Content/hls_h0_clr_vos/live/channel('
+                             'bb)/index.m3u8']
 ]
 
 # exclude group list
