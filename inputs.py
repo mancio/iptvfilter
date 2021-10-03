@@ -16,6 +16,15 @@ favourite = 'FAV'
 
 # favourites
 fav_list = [
+    '[PL] [HD] HBO',
+    '[PL] [HD] HBO 2',
+    '[PL] [HD] HBO 3',
+    '[PL] [HD] VH1',
+    '[PL] [HD] 4FUN GOLD HITS',
+    '[PL] [HD] 4FUN.TV',
+    '[PL] [HD] 4FUN DANCE',
+    '[PL] [HD] ESKA TV',
+    '[PL] [HD] ESKA ROCK TV',
     'GAMBERO ROSSO',
     '[IT] [HD] FOOD NETWORK HD',
     'ALICE HD',
