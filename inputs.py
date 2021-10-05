@@ -38,7 +38,6 @@ ch_list_more = [
     ['M2O TV', 'http://m2otv-lh.akamaihd.net/i/m2oTv_1@186074/index_600_av-b.m3u8'],
     ['R101', 'https://live3-radio-mediaset-it.akamaized.net/content/hls_h0_clr_vos/live/channel(er)/index.m3u8'],
     ['Radio 105', 'https://live3-radio-mediaset-it.akamaized.net/content/hls_h0_clr_vos/live/channel(ec)/index.m3u8'],
-    ['Trentino TV', 'https://5e73cf528f404.streamlock.net/TrentinoTV/livestream/playlist.m3u8'],
     ['Virgin Radio TV', 'https://live2-radio-mediaset-it.akamaized.net/Content/hls_h0_clr_vos/live/channel('
                         'ew)/index.m3u8'],
     ['ETV Rete 7', 'https://live.ipstream.it/etv/etv.stream/playlist.m3u8'],
@@ -48,7 +47,8 @@ ch_list_more = [
     ['Radio Italia TV', 'https://radioitaliatv-lh.akamaihd.net/i/radioitaliatv_1@329645/master.m3u8'],
     ['Radio Kiss Kiss TV', 'https://59253971be783.streamlock.net/KissKissTV/KissKissTV.stream/playlist.m3u8'],
     ['Radio Monte Carlo TV', 'https://live3-radio-mediaset-it.akamaized.net/Content/hls_h0_clr_vos/live/channel('
-                             'bb)/index.m3u8']
+                             'bb)/index.m3u8'],
+    ['Radio Ibiza TV', 'https://5929b138b139d.streamlock.net/RadioIbizaTV/livestream/playlist.m3u8']
 ]
 
 # exclude group list
