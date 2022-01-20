@@ -50,7 +50,9 @@ ch_list_more = [
                              'bb)/index.m3u8'],
     ['Radio Ibiza TV', 'https://5929b138b139d.streamlock.net/RadioIbizaTV/livestream/playlist.m3u8'],
     ['RaiNews24', 'https://rainews1-live.akamaized.net/hls/live/598326/rainews1/rainews1/playlist.m3u8'],
-    ['SkyTg24', 'https://skyanywhere3-i.akamaihd.net/hls/live/510696/tg24/playlist.m3u8']
+    ['SkyTg24', 'https://skyanywhere3-i.akamaihd.net/hls/live/510696/tg24/playlist.m3u8'],
+    ['Gambero Rosso', 'http://epix.hopto.org:7713/tony-durr-origin/68985258TNY/889?checkedby:iptvcat.com'],
+    ['Food Network', 'https://sbshdlu5-lh.akamaihd.net/i/sbshdl_6@1000854/master.m3u8?checkedby:iptvcat.com']
 ]
 
 # exclude group list
