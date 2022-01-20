@@ -1,3 +1,4 @@
+import os
 from os import path
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -23,8 +24,15 @@ def is_file_old(h):
 # download m3u original file
 def m3u_download(url, file):
     r = requests.get(url, allow_redirects=True)
+    if r.status_code != 200:
+        print("No content found in remote url, please check if is active, user and pass")
     open(file, 'wb').write(r.content)
     return file
+
+
+# check if source text file is empty
+def source_is_empty(file):
+    return os.stat(file).st_size == 0
 
 
 # build a new channel

@@ -48,7 +48,9 @@ ch_list_more = [
     ['Radio Kiss Kiss TV', 'https://59253971be783.streamlock.net/KissKissTV/KissKissTV.stream/playlist.m3u8'],
     ['Radio Monte Carlo TV', 'https://live3-radio-mediaset-it.akamaized.net/Content/hls_h0_clr_vos/live/channel('
                              'bb)/index.m3u8'],
-    ['Radio Ibiza TV', 'https://5929b138b139d.streamlock.net/RadioIbizaTV/livestream/playlist.m3u8']
+    ['Radio Ibiza TV', 'https://5929b138b139d.streamlock.net/RadioIbizaTV/livestream/playlist.m3u8'],
+    ['RaiNews24', 'https://rainews1-live.akamaized.net/hls/live/598326/rainews1/rainews1/playlist.m3u8'],
+    ['SkyTg24', 'https://skyanywhere3-i.akamaihd.net/hls/live/510696/tg24/playlist.m3u8']
 ]
 
 # exclude group list
