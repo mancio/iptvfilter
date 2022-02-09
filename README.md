@@ -9,6 +9,7 @@ to filter the list
 
 ### How to config filter
 * in `inputs.py` you can set all you need to configure the filter
+* you can find some channels here [https://iptvcat.com](https://iptvcat.com)
   
 ### Troubleshooting
 Program crash: remove `list.m3u` and try again.
