@@ -3,7 +3,7 @@
 ## Filter m3u list and save in new file
 
 ### How to run
-* execute `python main.py {user} {password}` example `python main.py 76485785 85987453`
+* execute `python main.py {url}` example `python main.py http://url:2082/get.php?username=gigi&password=jhvckjv&type=m3u_plus`
 to filter the list
 * upload the output file in your favourite iptv software like [https://siptv.app](https://siptv.app)   
 

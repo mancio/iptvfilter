@@ -1,10 +1,3 @@
-import sys
-
-# remote url (in case you cannot download please check your firewall and Antivirus)
-username = sys.argv[1]
-password = sys.argv[2]
-url = 'http://line.uhd-ott.me/get.php?username={}&password={}&type=m3u_plus&output=mpegts'.format(username, password)
-
 # input filename
 input_file = 'list.m3u'
 
@@ -47,6 +40,8 @@ ch_list_more = [
     ['Radio Birikina TV', 'https://list.iptvcat.com/my_list/s/ddbe4de96e6aa6890c6b28cdac4d27ad.m3u8'],
     ['RaiNews24', 'https://list.iptvcat.com/my_list/s/6091d973177060119c8612ed1e822b56.m3u8'],
     ['SkyTg24', 'https://skyanywhere3-i.akamaihd.net/hls/live/510696/tg24/playlist.m3u8'],
+    ['Euronews UK', 'https://rakuten-euronews-1-gb.samsung.wurl.com/manifest/playlist.m3u8'],
+    ['BBC News', 'http://vmp343.ddnsking.com:80/pari/pari/195614?checkedby:iptvcat.com'],
     ['Gambero Rosso', 'http://epix.hopto.org:7713/tony-durr-origin/68985258TNY/889?checkedby:iptvcat.com'],
     ['Food Network', 'https://sbshdlu5-lh.akamaihd.net/i/sbshdl_6@1000854/master.m3u8?checkedby:iptvcat.com'],
     ['Alice', 'https://list.iptvcat.com/my_list/s/d6ab6fbfe6d0edae63978c7773222804.m3u8'],

@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import sys
+
 from ipytv import M3UPlaylist, playlist
 
 import inputs
@@ -9,9 +11,9 @@ def main():
     hours = 24
 
     # check if file is too old and need to be downloaded
-    if operations.is_file_old(hours):
+    if operations.is_file_old(hours) and len(sys.argv) == 2:
         print('Downloading m3u list from remote')
-        source = operations.m3u_download(inputs.url, inputs.input_file)
+        source = operations.m3u_download(sys.argv[1], inputs.input_file)
     else:
         print('Source file newer than ' + str(hours) + ' hours')
         source = inputs.input_file
@@ -20,7 +22,7 @@ def main():
     destination = M3UPlaylist()
 
     print('Start to build list')
-    if not operations.source_is_empty(source):
+    if operations.source_is_not_empty(source):
         pl = playlist.M3UPlaylist.loadf(source)
         for ch in pl.list:
             # search for all ch not in the exclude list

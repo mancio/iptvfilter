@@ -31,8 +31,8 @@ def m3u_download(url, file):
 
 
 # check if source text file is empty
-def source_is_empty(file):
-    return os.stat(file).st_size == 0
+def source_is_not_empty(file):
+    return os.path.exists(file) and os.stat(file).st_size > 0
 
 
 # build a new channel
